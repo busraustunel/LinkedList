@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <conio.h>
 
-struct liste{  //baðlý listede kullanýlacak verileri tanýmladýk.
+struct liste{  //baÄŸlÄ± listede kullanÄ±lacak verileri tanÄ±mladÄ±k.
 	
 	char isim[20];
 	char soyisim[20];
@@ -14,8 +14,8 @@ struct liste{  //baðlý listede kullanýlacak verileri tanýmladýk.
   struct liste*son, *ilk, *gecici, *gecici2 = NULL;
  
     
-  void ara(struct liste *veri) { //gelecek veriyi kontrol edip baðlý listede yerine yazan fonksiyon
-    if(gecici2->sonraki->numara%10==veri->numara%10) //eðer gelen verinin son rakamý baðlý listede varsa bulunduðu düðümün sonuna eklenir.
+  void ara(struct liste *veri) { //gelecek veriyi kontrol edip baÄŸlÄ± listede yerine yazan fonksiyon
+    if(gecici2->sonraki->numara%10==veri->numara%10) //eÄŸer gelen verinin son rakamÄ± baÄŸlÄ± listede varsa bulunduÄŸu dÃ¼ÄŸÃ¼mÃ¼n sonuna eklenir.
     {
     			gecici2 = gecici2 -> sonraki;
 			   	while(gecici2 -> sonraki!=NULL && gecici2 -> sonraki -> numara%10 == veri -> numara%10){
@@ -23,8 +23,8 @@ struct liste{  //baðlý listede kullanýlacak verileri tanýmladýk.
 				   }
 	}
 
-   struct liste*eklenecek=(struct liste*)malloc(sizeof(struct liste)); //araya ekleme iþlemi için iki düðüm arasýndaki yeri belirledim.
-		        eklenecek=gecici2 -> sonraki; //böylece düðüm koparýlan yerden araya eleman eklenerek birleþtirileb,ilecek
+   struct liste*eklenecek=(struct liste*)malloc(sizeof(struct liste)); //araya ekleme iÅŸlemi iÃ§in iki dÃ¼ÄŸÃ¼m arasÄ±ndaki yeri belirledim.
+		        eklenecek=gecici2 -> sonraki; //bÃ¶ylece dÃ¼ÄŸÃ¼m koparÄ±lan yerden araya eleman eklenerek birleÅŸtirileb,ilecek
 		        gecici2 -> sonraki=veri;
 		        veri->sonraki=eklenecek;
       }
@@ -32,12 +32,12 @@ struct liste{  //baðlý listede kullanýlacak verileri tanýmladýk.
   
 
     
-	  void ekle( struct liste *veri){ //Gelen veriyi baþa ekleyen fonksiyon
+	  void ekle( struct liste *veri){ //Gelen veriyi baÅŸa ekleyen fonksiyon
   	    
   	    veri->sonraki=ilk;
   	    ilk=veri;
   }
-	  ekle2(struct liste *veri){ //eðer gelen veri baþtaki veriye eþitse baþtaki veriye eklenir.
+	  ekle2(struct liste *veri){ //eÄŸer gelen veri baÅŸtaki veriye eÅŸitse baÅŸtaki veriye eklenir.
 	  		   gecici2 = ilk;
 	   		while(gecici2 -> sonraki!=NULL && gecici2 -> sonraki -> numara %10 == veri-> numara%10){
    			   gecici2 = gecici2->sonraki;
@@ -47,7 +47,7 @@ struct liste{  //baðlý listede kullanýlacak verileri tanýmladýk.
 		   	   veri -> sonraki=NULL;
                 }
 			   else{
-			   ara(veri); //veriyi listedeki yerine eklemek için.
+			   ara(veri); //veriyi listedeki yerine eklemek iÃ§in.
                }
 			  
 	  }
@@ -56,7 +56,7 @@ struct liste{  //baðlý listede kullanýlacak verileri tanýmladýk.
    
 	  bul(struct liste *veri){ //gelen verinin yeri bulunur.
 	  	
-	  		if(ilk->numara%10==veri->numara%10){   // eðer veri ilk elemana eþitse baþtakini ekle fonksiyonu ile baþtakine eklenir.
+	  		if(ilk->numara%10==veri->numara%10){   // eÄŸer veri ilk elemana eÅŸitse baÅŸtakini ekle fonksiyonu ile baÅŸtakine eklenir.
 	   	
 	   	    ekle2(veri);
 	   	
@@ -83,7 +83,7 @@ struct liste{  //baðlý listede kullanýlacak verileri tanýmladýk.
 
     void kontrol(struct liste *veri){ //gelen verinin yeri kontrol edilir
     	
-    	if(ilk==NULL){  //eðer baðlý listede eleman yoksa gelen eleman ilk eleman olur.
+    	if(ilk==NULL){  //eÄŸer baÄŸlÄ± listede eleman yoksa gelen eleman ilk eleman olur.
     		if(ilk==NULL){
   		
   		ilk = veri;
@@ -98,22 +98,22 @@ struct liste{  //baðlý listede kullanýlacak verileri tanýmladýk.
   }
     	}
 		
-		else{ // eðer baðýl listede eleman varsa yeni gelen elemanýn yeri bulunur.
+		else{ // eÄŸer baÄŸÄ±l listede eleman varsa yeni gelen elemanÄ±n yeri bulunur.
 			
 			bul(veri);
     
 		}
 	}
 	
-	  void ara2(int x){ //girilen bilgiye göre aranýlan kiþi ve kaç adýmda bulunduðu tespit edilir.
-  	  int sayac=1; // bulunma adýmýný temsil ettiði için sayaç birden baþlatýlýr.
+	  void ara2(int x){ //girilen bilgiye gÃ¶re aranÄ±lan kiÅŸi ve kaÃ§ adÄ±mda bulunduÄŸu tespit edilir.
+  	  int sayac=1; // bulunma adÄ±mÄ±nÄ± temsil ettiÄŸi iÃ§in sayaÃ§ birden baÅŸlatÄ±lÄ±r.
       gecici2 =  ilk;
    	  while(gecici2!=NULL && gecici2->numara!=x){
    		gecici2 = gecici2 -> sonraki;
    		sayac++; 
 	   }
 	    if(!gecici2 -> numara == x){
-		printf("Aradiginiz kisi listede bulunmamaktadir.."); // eðer aranýlan kiþi listede yoksa listede olmadýðý ekrana yazdýrýlýr.
+		printf("Aradiginiz kisi listede bulunmamaktadir.."); // eÄŸer aranÄ±lan kiÅŸi listede yoksa listede olmadÄ±ÄŸÄ± ekrana yazdÄ±rÄ±lÄ±r.
 	   	}
 	   else {
 	   	printf("Aradiginiz kisi %d adimda bulunmustur..",(sayac));
@@ -123,16 +123,16 @@ struct liste{  //baðlý listede kullanýlacak verileri tanýmladýk.
    
      
    
-  void sil1(){ // silinecek eleman ilk eleman ise çalýþan fonksiyon
+  void sil1(){ // silinecek eleman ilk eleman ise Ã§alÄ±ÅŸan fonksiyon
   	
   struct liste*ikinci=NULL;
   ikinci=ilk->sonraki;
   free(ilk);
-  ilk=ikinci; //ilk düðümden sonraki düðüm ilk olur.
+  ilk=ikinci; //ilk dÃ¼ÄŸÃ¼mden sonraki dÃ¼ÄŸÃ¼m ilk olur.
   }
-void sil3(){ //seçilen eleman en sondaysa sondaki düðümü silen fonskiyon. 
+void sil3(){ //seÃ§ilen eleman en sondaysa sondaki dÃ¼ÄŸÃ¼mÃ¼ silen fonskiyon. 
 	 
- 	if(gecici2 -> sonraki == NULL){ //sondan bi önceki düðümün sonrasý null iþaret eder.
+ 	if(gecici2 -> sonraki == NULL){ //sondan bi Ã¶nceki dÃ¼ÄŸÃ¼mÃ¼n sonrasÄ± null iÅŸaret eder.
 	   	gecici2 = ilk;
    	while(gecici2->sonraki->sonraki!=NULL){
    		gecici2 = gecici2 -> sonraki;
@@ -141,12 +141,12 @@ void sil3(){ //seçilen eleman en sondaysa sondaki düðümü silen fonskiyon.
 	   gecici2 ->sonraki=NULL;
 	   }
    }
-   void sil2(int x){ //silinecek eleman arada bir elemansa çalýþan fonksiyon
+   void sil2(int x){ //silinecek eleman arada bir elemansa Ã§alÄ±ÅŸan fonksiyon
    	
    	if(ilk->numara==x){
    		sil1();
 	   }
-	   struct liste*onceki=NULL; //silinecek elemanýn önceki elemanýna önceki, sonraki elemanýna sonra ismi verilir.
+	   struct liste*onceki=NULL; //silinecek elemanÄ±n Ã¶nceki elemanÄ±na Ã¶nceki, sonraki elemanÄ±na sonra ismi verilir.
 	   struct liste*sonra=NULL;
 	   
 	   gecici2 = ilk;
@@ -162,22 +162,22 @@ void sil3(){ //seçilen eleman en sondaysa sondaki düðümü silen fonskiyon.
        onceki->sonraki=sonra;
    }
      
-   void yazdir(){ //baðlý listeyi ekrana bastýran fonksiyon
+   void yazdir(){ //baÄŸlÄ± listeyi ekrana bastÄ±ran fonksiyon
 	
 	gecici=ilk;
 	while(gecici->sonraki!=NULL){
 		printf("%d %s %s=> ",gecici->numara,gecici->isim,gecici->soyisim);
 		gecici=gecici->sonraki;
 	}
-	printf("%d %s %s=> ",gecici->numara,gecici->isim,gecici->soyisim); // son elemaný ekrana bastýrmak için tekrar yazarýz.
+	printf("%d %s %s=> ",gecici->numara,gecici->isim,gecici->soyisim); // son elemanÄ± ekrana bastÄ±rmak iÃ§in tekrar yazarÄ±z.
 }
 	 
-    void sil(int x){ //silinmek istenen elemanýn yerini bulup ona göre silen fonksiyon
-   	if(ilk->numara==x){   //eðer istenen eleman ilk elemansa baþtan silinir.
+    void sil(int x){ //silinmek istenen elemanÄ±n yerini bulup ona gÃ¶re silen fonksiyon
+   	if(ilk->numara==x){   //eÄŸer istenen eleman ilk elemansa baÅŸtan silinir.
    	  
    	   sil1();
    	  
-   	   yazdir(); //listenin yeni hali ekrana bastýrýlýr.
+   	   yazdir(); //listenin yeni hali ekrana bastÄ±rÄ±lÄ±r.
 	   }
 	                     
 	   
@@ -193,7 +193,7 @@ void sil3(){ //seçilen eleman en sondaysa sondaki düðümü silen fonskiyon.
 int main(){
 	
 	int sayi1,sayi2;
-	FILE *p1= fopen("dosya1.txt","r+");
+	FILE *p1= fopen("bagliListe.txt","r+");
 	FILE *p2=fopen("dosya2.txt","w+");
     
 
@@ -203,7 +203,7 @@ int main(){
 	    x->sonraki=NULL;
 	 
 	  	fscanf(p1,"%d",&x->numara);
-	  	fscanf(p1,"%[ ]s",&x->isim); //dosyada isimden önceki boþluk okunur.
+	  	fscanf(p1,"%[ ]s",&x->isim); //dosyada isimden Ã¶nceki boÅŸluk okunur.
 	  	fscanf(p1,"%s",&x->isim); 
 	  	fscanf(p1,"%[ ]s",&x->soyisim);
 	  	fscanf(p1,"%s",&x->soyisim);
@@ -228,7 +228,7 @@ int main(){
 	  	scanf("%d", &islem);
 	  	
   	 if(islem == 1) { //Eleman Ekleme
-	   struct liste* x=(struct liste*)malloc(sizeof(struct liste)); //yeni gelecek eleman için bellekten yer ayrýlýr.
+	   struct liste* x=(struct liste*)malloc(sizeof(struct liste)); //yeni gelecek eleman iÃ§in bellekten yer ayrÄ±lÄ±r.
 	   x->sonraki=NULL;
        printf("\n\nekleyeceginiz kisinin bilgilerini giriniz:\n");
        printf("Numara:");
@@ -257,7 +257,7 @@ int main(){
            ara2(sayi1);
 		   }
 		  
-		   else if(islem == 3) { //Listede Görüntüleme
+		   else if(islem == 3) { //Listede GÃ¶rÃ¼ntÃ¼leme
 		   yazdir();
 	       }
 	       
