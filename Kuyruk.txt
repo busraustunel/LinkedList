@@ -1,0 +1,7 @@
+0 Veli
+0 Ayse
+1 Kamile
+1 Zeynep
+1 Ali
+2 Mehmet
+2 Mert
