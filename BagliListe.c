@@ -200,7 +200,7 @@ int main(){
  while(!feof(p1)){
 	  	
 	  	struct liste* x=(struct liste*)malloc(sizeof(struct liste)); 
-	    x->sonraki=NULL;
+	        x->sonraki=NULL;   
 	 
 	  	fscanf(p1,"%d",&x->numara);
 	  	fscanf(p1,"%[ ]s",&x->isim); //dosyada isimden önceki boşluk okunur.
