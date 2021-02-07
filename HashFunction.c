@@ -1,4 +1,4 @@
-//181213042 B‹ﬁRA ‹ST‹NEL
+
 
 #include <stdio.h>
 #include <conio.h>
@@ -21,7 +21,7 @@ int HASH(int no)
 	return hash_index;
 }
 
-//1)EKLEME ›ﬁLEM›
+//1)EKLEME √ù√ûLEM√ù
 veriEkleme(int no, char ad[20], char soyad[20]){
 	int hash_index = HASH(no);
 	if(hash_tablo[hash_index][0] == -1){
@@ -58,7 +58,7 @@ veriEkleme(int no, char ad[20], char soyad[20]){
 }
 
 int adim_sayisi = 0;
-//2)ARAMA ›ﬁLEM›
+//2)ARAMA √ù√ûLEM√ù
 int veriArama(int musteri_no, int indis){
 	adim_sayisi++;
 	if(hash_tablo[indis][0]==musteri_no){
@@ -76,7 +76,7 @@ int veriArama(int musteri_no, int indis){
 }
 
 
-//3)S›LME ›ﬁLEM›
+//3)S√ùLME √ù√ûLEM√ù
 veriSilme(int musteri_no, int indis){
 	
 	adim_sayisi++;
@@ -94,7 +94,7 @@ veriSilme(int musteri_no, int indis){
 	return 0;	
 }
 
-//4)HASH TABLOSU L›STELEME
+//4)HASH TABLOSU L√ùSTELEME
 hashTablosuListele(){
 	
 	for(int i=0;i<10;i++){
@@ -102,7 +102,7 @@ hashTablosuListele(){
 	}
 }
 
-//5)VER› L›STES› L›STELEME
+//5)VER√ù L√ùSTES√ù L√ùSTELEME
 veriListesiListele(){
 	for(int i=0;i<10;i++){
 		if(hash_tablo[i][0]!=-1){
@@ -129,7 +129,7 @@ ortalamaAdimHesapla(){
 }
 
 
-//ANA MEN‹
+//ANA MEN√ú
 void menu() {
 	char ad[20], soyad[20];
 	int secim = 0;
