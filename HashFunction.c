@@ -1,5 +1,3 @@
-
-
 #include <stdio.h>
 #include <conio.h>
 #include <stdlib.h>
@@ -195,7 +193,7 @@ int main(){
 	}
 	    
     
-    	if ((fp=fopen("veri.txt","r"))!= NULL){
+    	if ((fp=fopen("HASH.txt","r"))!= NULL){
 		while (!feof(fp)){
 		
   	    	fscanf(fp,"%d  %s  %s ",&no,&ad,&soyad);
