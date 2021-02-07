@@ -124,7 +124,7 @@ void menu() {
 
 int main() {
             FILE *f1;
-            f1 = fopen("dosya.txt","a+");
+            f1 = fopen("kuyruk.txt","a+");
             
 			int i = 0;
             while(!feof(f1))
