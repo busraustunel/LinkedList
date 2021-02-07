@@ -1,4 +1,4 @@
-//181213042 BUSRA USTUNEL
+
 
 #include <stdio.h>
 #include <stdlib.h>
